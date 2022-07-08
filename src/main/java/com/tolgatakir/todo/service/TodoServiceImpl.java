@@ -68,6 +68,11 @@ public class TodoServiceImpl implements TodoService {
         repository.deleteAllInBatch(completedTodos);
     }
 
+    @Override
+    public void deleteAllTodo() {
+        repository.deleteAll();
+    }
+
     private TodoEntity getTodoEntity(Long id) {
         return repository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Todo not found for given id."));

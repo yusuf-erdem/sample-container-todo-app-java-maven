@@ -1,4 +1,4 @@
-name: Test for sample-container-todo-app-java-maven
+name: Test for sample-container-todo-app-java-maven for lab
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   workflow_call:
     secrets:
-      THUNDRA_APIKEY:
+      THUNDRA_LAB_APIKEY:
         required: true
       THUNDRA_REGISTRY:
         required: true
@@ -27,9 +27,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Foresight Workflow Kit Action
-        uses: runforesight/foresight-workflow-kit-action@v1.0.0-beta
+        uses: runforesight/foresight-workflow-kit-action@v1
         with:
-          api_key: ${{ secrets.THUNDRA_APIKEY }}
+          api_key: ${{ secrets.THUNDRA_LAB_APIKEY }}
       - uses: actions/checkout@v2
       - name: Set up JDK
         uses: actions/setup-java@v2
@@ -44,11 +44,11 @@ jobs:
           npm config set registry ${{ secrets.THUNDRA_REGISTRY }}
           npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
       - name: Foresight Test Kit Action
-        uses: runforesight/foresight-test-kit-action@v1.0.0-beta
+        uses: runforesight/foresight-test-kit-action@v1
         with:
-          api_key: ${{ secrets.THUNDRA_APIKEY }}
+          api_key: ${{ secrets.THUNDRA_LAB_APIKEY }}
           test_framework: junit
           test_path: target/surefire-reports/**
           coverage_format: jacoco/xml
           coverage_path: target/site/jacoco/*.xml
-          cli_version: 213.3.16
+          cli_version: 123.321.5

@@ -52,6 +52,7 @@ public class TodoServiceImpl implements TodoService {
         return new Todo(entity.getId(), entity.getTitle(), entity.isCompleted());
     }
 
+    
     @Override
     public void deleteTodo(Long id) {
         repository.deleteById(id);

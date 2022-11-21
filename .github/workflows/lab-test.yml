@@ -17,6 +17,7 @@ on:
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.me
   WORKFLOW_TELEMETRY_BASE_URL: https://api.service.runforesight.me
+  ON_DEMAND_API_KEY_BASE_URL: https://api-public.service.runforesight.me
 jobs:
   test:
     strategy:

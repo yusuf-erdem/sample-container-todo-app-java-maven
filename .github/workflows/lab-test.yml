@@ -17,6 +17,7 @@ on:
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.me
   WORKFLOW_TELEMETRY_BASE_URL: https://api.service.runforesight.me
+  ON_DEMAND_API_KEY_BASE_URL: https://api-public.service.runforesight.me
 jobs:
   test:
     strategy:
@@ -40,6 +41,7 @@ jobs:
       - name: Run Tests with Maven
         run: ./mvnw clean test
       - name: Foresight Test Kit Action
+        if: ${{ always() }}
         uses: runforesight/foresight-test-kit-action@v1
         with:
           api_key: ${{ secrets.THUNDRA_LAB_APIKEY }}

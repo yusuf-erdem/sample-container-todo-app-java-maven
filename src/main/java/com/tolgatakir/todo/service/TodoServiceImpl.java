@@ -28,6 +28,11 @@ public class TodoServiceImpl implements TodoService {
                 .map(entity -> new Todo(entity.getId(), entity.getTitle(), entity.isCompleted()))
                 .collect(Collectors.toList());
     }
+    
+    @Override
+    public int multiply() {
+        return 3*5;
+    }
 
     @Override
     public Todo addTodo(Todo request) {
@@ -47,6 +52,7 @@ public class TodoServiceImpl implements TodoService {
         return new Todo(entity.getId(), entity.getTitle(), entity.isCompleted());
     }
 
+    
     @Override
     public void deleteTodo(Long id) {
         repository.deleteById(id);

@@ -11,6 +11,8 @@ public interface TodoService {
     List<Todo> findTodos();
 
     Todo addTodo(Todo todo);
+    
+    int multiply();
 
     Todo updateTodo(Long id, Todo todo);
 

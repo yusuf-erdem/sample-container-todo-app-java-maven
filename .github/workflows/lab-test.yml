@@ -1,6 +1,8 @@
 name: Test for sample-container-todo-app-java-maven for lab
 
 on:
+  schedule:
+    - cron: "0 */4 * * *"
   push:
     branches: [ main ]
   pull_request:

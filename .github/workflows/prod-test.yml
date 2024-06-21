@@ -34,6 +34,7 @@ jobs:
       - name: Run Tests with Maven
         run: ./mvnw clean test
       - name: Foresight Test Kit Action
+        if: ${{ always() }}
         uses: runforesight/foresight-test-kit-action@v1
         with:
           api_key: ${{ secrets.THUNDRA_PROD_APIKEY }}

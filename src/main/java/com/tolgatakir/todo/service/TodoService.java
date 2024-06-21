@@ -19,4 +19,6 @@ public interface TodoService {
     Todo duplicateTodo(Long id);
 
     void clearCompletedTodo();
+
+    void deleteAllTodo();
 }

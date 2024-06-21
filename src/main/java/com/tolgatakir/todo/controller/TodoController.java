@@ -62,4 +62,11 @@ public class TodoController {
         service.clearCompletedTodo();
         return ResponseEntity.ok().build();
     }
+
+    @DeleteMapping("/clear")
+    public ResponseEntity<Void> deleteAllTodo() {
+        service.deleteAllTodo();
+
+        return ResponseEntity.noContent().build();
+    }
 }

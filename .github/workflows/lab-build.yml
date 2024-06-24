@@ -10,6 +10,7 @@ on:
     secrets:
       THUNDRA_LAB_APIKEY:
         required: true
+        
 env:
   WORKFLOW_TELEMETRY_BASE_URL: https://api.service.runforesight.me
 jobs:

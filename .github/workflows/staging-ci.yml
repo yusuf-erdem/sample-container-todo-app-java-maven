@@ -1,5 +1,4 @@
 name: CI for sample-container-todo-app-java-maven for staging
-
 on:
   push:
     branches: [ main ]
